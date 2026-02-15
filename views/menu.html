@@ -2,9 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alke Wallet - Menú Principal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h2>Menú Principal</h2>
+      <nav>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group-vertical btn-group-sm btn-group-toggle w-100" role="group" data-toggle="buttons">
+              <a href="#" id="deposito" class="btn btn-outline-primary">Depositar</a>
+              <a href="#" id="envio" class="btn btn-outline-primary">Enviar Dinero</a>
+              <a href="#" id="movimientos" class="btn btn-outline-primary">Últimos Movimientos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="form-row mb-0 mt-3">
+        <div class="form-justify">
+          <label for="balance">Dinero en cuenta:</label>
+          <label id="balance"></label>
+        </div>        
+      </div>
+      <div id="myAlert" class="alert"></div>
+    </main>    
+  </div>
+  <script src="../data/charge_data.js"></script>
+  <script src="../assets/scripts/redirection.js"></script>
 </body>
 </html>

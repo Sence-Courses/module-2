@@ -1,0 +1,94 @@
+body {
+  padding: 20px;
+}
+
+h2 {
+  font-family: '.roboto-serif-example';
+  font-size: xx-large;
+  font-style: oblique;
+  color: #007bff;
+  text-align: center;
+}
+
+h3 {
+  font-family: '.roboto-serif-example';
+  font-size: large;
+  color: #007bff;
+}
+
+label {
+  font-family: '.roboto-serif-example';
+  font-size: large;
+  color: #007bff;
+}
+
+#contactList, #trxList li {
+  list-style: none;
+  background-color: azure;
+}
+
+#contactList li:hover {
+  list-style: none;
+  background-color:lightsteelblue;
+  font-style: oblique;
+}
+
+ul li label {
+  font-family: '.roboto-serif-example';
+  font-size: medium;
+  color: #007bff;
+}
+
+footer {
+  text-align: center;
+}
+
+.label-alone label {
+  display: flex;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.myLiStyle li {
+  font-family: '.roboto-serif-example';
+  font-size: medium;
+  color: #007bff;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-justify {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.roboto-serif-example {
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "GRAD" 0;
+}
+
+.error-message {
+  color: red;
+  background-color: bisque;
+  font-size: 0.8em;
+  display: none;
+}
+
+.alert {
+  padding: 20px;
+  background-color:bisque;
+  color: #007bff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  display: none;
+}
