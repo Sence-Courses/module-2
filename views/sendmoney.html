@@ -2,9 +2,98 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alke Wallet - Enviar Dinero</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body>  
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <div class="container">
+    <header>
+      <h2>Enviar Dinero</h2>
+    </header>
+    <main>  
+      <form>
+        <div class="form-group mb-2">
+          <label for="searchContact">Buscar en la agenda de transferencias:</label>
+          <input type="text" class="form-control" id="searchContact" placeholder="Search contact">
+        </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Agregar nuevo contacto</button>
+        <hr>
+        <h3>Contactos</h3>
+        <ul id="contactList" class="list-group"></ul>  
+      </form>
+      <hr>
+    </main>
+    <footer>  
+      <a href="menu.html" class="btn btn-secondary">Volver al Menú Principal</a>
+    </footer>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="contactModalLabel">Nuevo Contacto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm">
+            <div class="form-group mb-2 mt-0">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre">
+              <label for="cbu">CBU:</label>
+              <input type="text" class="form-control" id="cbu" name="cbu" placeholder="Ingrese CBU">
+              <label for="alias">Alias:</label>
+              <input type="text" class="form-control" id="alias" name="alias" placeholder="Ingrese alias">
+              <label for="banco">Banco:</label>
+              <input type="text" class="form-control" id="banco" name="banco" placeholder="Ingrese banco">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anular</button>
+              <button type="submit" id="addContact" class="btn btn-primary">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Send Money Modal -->
+  <div class="modal fade" id="sendMoneyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="sendMoneyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="sendMoneyModalLabel">Envio de Dinero</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="sendMoneyForm">
+            <div class="form-group mb-2 mt-0">
+              <label for="nombre">Destinatario:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" disabled>
+              <label for="cbu">CBU:</label>
+              <input type="text" class="form-control" id="cbu" name="cbu" disabled>
+              <label for="banco">Banco:</label>
+              <input type="text" class="form-control" id="banco" name="banco" disabled>
+              <label for="depositAmount">Monto a transferir:</label>
+              <input type="text" class="form-control" id="depositAmount" name="depositAmount" placeholder="Ingrese Monto a transferir">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anular</button>
+              <button type="submit" id="sendMoneyButton" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/charge_data.js"></script>
+  <script src="../data/storage.js"></script>
+  <script src="../assets/scripts/listeners.js"></script>
 </body>
 </html>
