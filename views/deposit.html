@@ -11,21 +11,23 @@
 <body>
   <div class="container">
     <header>
-      <h2>Depositar</h2>
+      <h2 class="title">Depositar</h2>
     </header>
     <main>
       <div class="form-row mb-0 mt-3">
         <div class="form-justify">
-          <label for="balance">Dinero en cuenta:</label>
-          <label id="balance"></label>
+          <label class="subtitle" for="balance">Dinero en cuenta:</label>
+          <label class="subtitle" id="balance"></label>
         </div>        
       </div>
       <form id="depositForm">
         <div class="form-group mb-2 mt-4">
-          <label for="depositAmount">Monto a depositar:</label>
-          <input type="number" class="form-control" id="depositAmount" placeholder="Enter amount">
+          <label class="label-input" for="depositAmount">Monto a depositar:</label>
+          <input type="number" class="form-control" id="depositAmount" placeholder="Ingrese monto">
         </div>
-        <button type="submit" class="btn btn-primary">Realizar depósito</button>
+        <div class="button-container">
+          <button type="submit" class="btn btn-primary button">Realizar depósito</button>
+        </div>
       </form>
       <hr>
     </main>
