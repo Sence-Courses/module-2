@@ -1,46 +1,90 @@
-body {
-  padding: 20px;
+:root {
+  --primary-color: #00c853;
+  --secondary-color: #00a896;
+  --accent-color: #218b86;
+  --background-color: #afffe48d;
+  --filler-color: rgba(215, 247, 232, 0.655);
 }
 
-h2 {
-  font-family: '.roboto-serif-example';
+body {
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+i {
+  color: var(--secondary-color);
+}
+
+.title {
   font-size: xx-large;
-  font-style: oblique;
-  color: #007bff;
+  color:var(--primary-color);
   text-align: center;
 }
 
-h3 {
-  font-family: '.roboto-serif-example';
-  font-size: large;
-  color: #007bff;
+.subtitle {
+  font-size: x-large;
+  color:var(--primary-color);
+  text-align: center;
 }
 
-label {
-  font-family: '.roboto-serif-example';
+form div label {
+  font-family: '.roboto-serif-subtitle';
   font-size: large;
-  color: #007bff;
+  color: var(--primary-color);
 }
 
-#contactList, #trxList li {
+.button-container {
+  text-align: center;
+}
+
+.button {
+  font-family: '.roboto-serif-subtitle';
+  font-size: larger;
+  background-color: var(--secondary-color);
+  border-color: var(--filler-color);
+  margin-top: 4px;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+}
+
+.button-menu-shape {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  color:var(--background-color);
+  font-size: x-large;
+  text-align: center;
+  border-radius: 30px;
+  padding: 25px;
+}
+
+.button-menu-shape:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  color: var(--filler-color)
+}
+
+#contactList li, #trxList li {
   list-style: none;
-  background-color: azure;
 }
 
 #contactList li:hover {
   list-style: none;
-  background-color:lightsteelblue;
+  background-color: var(--filler-color);
+  border-color: var(--accent-color);
   font-style: oblique;
 }
 
 ul li label {
-  font-family: '.roboto-serif-example';
+  font-family: '.roboto-serif-subtitle';
   font-size: medium;
-  color: #007bff;
-}
-
-footer {
-  text-align: center;
+  color: var(--primary-color);
 }
 
 .label-alone label {
@@ -49,15 +93,15 @@ footer {
   margin-bottom: 0%;
 }
 
-.myLiStyle li {
-  font-family: '.roboto-serif-example';
-  font-size: medium;
-  color: #007bff;
+.trx-list {
+  border: 3px solid var(--secondary-color);
+  background-color: var(--background-color);
 }
 
-.container {
-  max-width: 400px;
-  margin: 0 auto;
+.trx-li-style {
+  padding: 4px;
+  font-family: '.roboto-serif-subtitle';
+  font-size: medium;
 }
 
 .form-justify {
@@ -66,10 +110,36 @@ footer {
   align-items: center;  
 }
 
-.roboto-serif-example {
+#contactForm div, #sendMoneyForm div {
+  background-color: transparent;
+}
+
+.modal-style div div {
+  background-color: var(--background-color);
+}
+
+.modal-style div div form label {
+  background-color: transparent;
+}
+
+footer {
+  text-align: center;
+}
+
+.roboto-serif-title {
   font-family: "Roboto Serif", serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "GRAD" 0;
+}
+
+.roboto-serif-subtitle {
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings:
     "wdth" 100,

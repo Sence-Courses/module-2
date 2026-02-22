@@ -11,14 +11,14 @@
 <body>
   <div class="container">
     <header>
-      <h2>Menú Principal</h2>
+      <h2 class="title">Menú Principal</h2>
       <nav>
         <div class="row">
           <div class="col-md-12">
             <div class="btn-group-vertical btn-group-sm btn-group-toggle w-100" role="group" data-toggle="buttons">
-              <a href="#" id="deposito" class="btn btn-outline-primary">Depositar</a>
-              <a href="#" id="envio" class="btn btn-outline-primary">Enviar Dinero</a>
-              <a href="#" id="movimientos" class="btn btn-outline-primary">Últimos Movimientos</a>
+              <a href="#" id="deposito" class="btn btn-outline-primary button-menu-shape">Depositar</a>
+              <a href="#" id="envio" class="btn btn-outline-primary button-menu-shape">Enviar Dinero</a>
+              <a href="#" id="movimientos" class="btn btn-outline-primary button-menu-shape">Últimos Movimientos</a>
             </div>
           </div>
         </div>
@@ -27,12 +27,12 @@
     <main>
       <div class="form-row mb-0 mt-3">
         <div class="form-justify">
-          <label for="balance">Dinero en cuenta:</label>
-          <label id="balance"></label>
+          <label class="subtitle" for="balance">Dinero en cuenta:</label>
+          <label class="subtitle" id="balance"></label>
         </div>        
       </div>
       <div id="myAlert" class="alert"></div>
-    </main>    
+    </main>
   </div>
   <script src="../data/charge_data.js"></script>
   <script src="../assets/scripts/redirection.js"></script>

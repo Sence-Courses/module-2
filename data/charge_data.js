@@ -119,7 +119,7 @@ const chargeSendData = () => {
   const button = document.createElement('button');
   button.type = 'button';
   button.id = 'openSendMoneyModal';
-  button.classList.add('btn','btn-primary');
+  button.classList.add('btn','btn-primary','button');
   button.setAttribute('data-bs-toggle', 'modal');
   button.setAttribute('data-bs-target', '#sendMoneyModal');
   button.textContent = 'Enviar dinero';
@@ -134,7 +134,7 @@ const chargeTransactions = () => {
   trxs.forEach( e => {
     const li = document.createElement('li');
     const div = document.createElement('div');
-    //div.classList.add('label-alone');
+    div.classList.add('trx-li-style');
     const iconElement = document.createElement('i');
     
     if (e.type === 'deposit' || e.type === 'trx-rec') {
