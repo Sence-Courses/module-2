@@ -2,10 +2,7 @@ const alertElement = document.getElementById("myAlert");
 const allLinks = document.querySelectorAll('a');
 
 const urlRD = Object.freeze({
-  menu: {url: 'menu.html', msg: 'Redireccionando al menu principal.'},
-  deposito: {url: 'deposit.html', msg: 'Redireccionando a pagina de depositos.'},
-  envio: {url: 'sendmoney.html', msg: 'Redireccionando a pagina de envio de dinero.'},
-  movimientos: {url: 'transactions.html', msg: 'Redireccionando a pagina de transacciones.'}
+  menu: {url: 'menu.html', msg: 'Redireccionando al menu principal.'}
 });
 
 function redirection(message, targetUrl) {
