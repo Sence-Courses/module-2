@@ -53,20 +53,8 @@ document.addEventListener('DOMContentLoaded', e => {
   const pageId = pageTitle.split(" ").pop();
   
   switch(pageId) {
-    case 'Login':
-      chargeLoginData();
-      break;
-    case 'Principal':
-      chargeMenuData();
-      break;
-    case 'Depositar':
-      chargeDepositData();
-      break;
     case 'Dinero':
       chargeSendData();
-      break;
-    case 'Movimientos':
-      chargeTransactions();
       break;
   }
 });
@@ -78,19 +66,10 @@ const chargeLoginData = () => {
   window.sessionStorage.setItem('transacciones', JSON.stringify(transacciones));
 }
 
-const chargeMenuData = () => {
-  const balanceElement = document.getElementById("balance");
-  const balance = window.sessionStorage.getItem('saldo');
-  balanceElement.textContent = amountFormatter.format(balance);
-}
-
-const chargeDepositData = () => {
-  const balanceElement = document.getElementById("balance");
-  const balance = window.sessionStorage.getItem('saldo');
-  balanceElement.textContent = amountFormatter.format(balance);
-}
-
 const chargeSendData = () => {
+  if (window.sessionStorage.getItem('saldo') == null) {
+    chargeLoginData();
+  }
   const getContacts = () => window.sessionStorage.getItem('contactos');
   const contactList = document.getElementById('contactList');
   const contacts = JSON.parse(getContacts());
@@ -126,35 +105,7 @@ const chargeSendData = () => {
   contactList.appendChild(button);
 }
 
-const chargeTransactions = () => {
-  const getTrxs = () => window.sessionStorage.getItem('transacciones');
-  const trxList = document.getElementById('trxList');
-  const trxs = JSON.parse(getTrxs());
-
-  trxs.forEach( e => {
-    const li = document.createElement('li');
-    const div = document.createElement('div');
-    div.classList.add('trx-li-style');
-    const iconElement = document.createElement('i');
-    
-    if (e.type === 'deposit' || e.type === 'trx-rec') {
-      iconElement.className = 'fa-solid fa-hand-holding-dollar';
-    }
-    else {
-      iconElement.className = 'fa-solid fa-money-bill-trend-up';
-    }    
-    const detalle = document.createElement('label');
-    const amount = amountFormatter.format(e.amount);
-    detalle.textContent = `Detalle: ${e.detail} Monto: ${amount}`;
-
-    div.append(iconElement, detalle);
-    li.appendChild(div);
-    trxList.appendChild(li);
-  });
-}
-
 const amountFormatter = new Intl.NumberFormat('es-CL', {
   style: 'currency',
   currency: 'CLP',
 });
-
