@@ -11,6 +11,31 @@ body {
   background-color: var(--background-color);
 }
 
+.navbar {
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar > div {
+  padding: 0px;
+  background-color: var(--background-color);
+}
+
+.navbar > div > button {
+  color: var(--primary-color);
+}
+
+.responsive-menu {
+  list-style: none;
+}
+
+.responsive-menu li a {
+  text-decoration: none;
+  cursor: default;
+  color: var(--primary-color);
+  text-align: left;
+}
+
 .container {
   max-width: 400px;
   margin: 0 auto;
